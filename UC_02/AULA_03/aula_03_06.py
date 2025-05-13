@@ -21,12 +21,31 @@ print('Relatório de Vendas:')
 print(df_vendedores)
 
 #criando metricas
-soma_jan = df_vendedores['Vendas'].sum()
-media_jan=df_vendedores['Vendas'].mean()
-maior_jan=df_vendedores['Vendas'].max()
-menor_jan=df_vendedores['Vendas'].min(),
+soma_v = df_vendedores['Vendas'].sum()
+media_v=df_vendedores['Vendas'].mean()
 
-print(f'O valor total das vendas é: {soma_jan}')
-print(f'O media das vendas foi de:')
-print(f'O maior valor das vendas foi de:')
-print(f'O menor valor das vendas foi de:')
+media_id=df_vendedores['idade'].mean()
+maior_id=df_vendedores['idade'].max()
+menor_id=df_vendedores['idade'].min()
+
+maior_v = df_vendedores['Vendas'].max()
+menor_v=df_vendedores['Vendas'].min()
+
+melhor_v= df_vendedores[df_vendedores['Vendas'] == maior_v]['Nome']
+pior_v= df_vendedores[df_vendedores['Vendas'] == menor_v]['Nome']
+
+vendas_f= df_vendedores[df_vendedores['sexo'] == 'F']['Vendas'].sum()
+vendas_m= df_vendedores[df_vendedores['sexo'] == 'M']['Vendas'].sum()
+
+print(f'O valor total das vendas é: {soma_v}')
+print(f'O media das vendas foi de:{media_v}')
+
+print(f'O media de idades dos vendedores é de:{media_id}')
+print(f'A maior idade dos vendedores é de:{maior_id}')
+print(f'A menor idade dos vendedores é de:{menor_id}')
+
+print(f'O vendedor que mais realizou vendas foi:{melhor_v.values[0]} vendendo {maior_v} produtos')
+print(f'O vendedor que menos vendeu foi:{pior_v.values[0]} vendendo {menor_v} produtos')
+
+print(f'A quantidade de vendas realizadas por mulheres foi de: {vendas_f}')
+print(f'A quantidade de vendas realizadas por homens foi de: {vendas_m}')
