@@ -1,0 +1,38 @@
+#importando bibliotecas
+import pandas as pd
+import numpy as np
+
+#Importar a base de dados
+dataend = 'BASES\Funcionarios.csv'
+
+#Criar dataframe funcionarios
+df_funcionarios= pd.read_csv(dataend, sep=',',encoding='iso-8859-1')
+
+#Array para salario
+Ar_salario=np.array(df_funcionarios['Salário'])
+#Array para idade
+Ar_idade=np.array(df_funcionarios['Idade'])
+#Array para tempo
+Ar_tempo=np.array(df_funcionarios['Tempo'])
+
+#Obtendo as metricas solicitadas
+media_sal= np.mean(Ar_salario)
+media_ida= np.mean(Ar_idade)
+dif_idade= np.max(Ar_idade) - np.min(Ar_idade)
+dif_tempo= (np.max(Ar_tempo) - np.min(Ar_tempo))
+media_t= np.mean(Ar_tempo)
+dif_idade= (np.max(Ar_idade) - np.min(Ar_idade))
+
+print('\n-------------Tabela de funcionarios-------------')
+print(df_funcionarios)
+print(f'A media salarial é de: {media_sal:,.0f}')
+print(f'A media de idade é de: {media_ida:,.0f}')
+print(f'O maior tempo de casa é de: {np.max(Ar_idade)} e o menor: {np.min(Ar_idade)}')
+print(f'A diferença entre eles é: {dif_idade}')
+print(f'O maior tempo de casa é: {np.max(Ar_tempo)} e o menor: {np.min(Ar_tempo)}. A diferença entre eles:{dif_tempo}')
+print(f'A média de tempo de casa:{media_t:,.0f}')
+print(f'O funcionário mais novo tem {np.max(Ar_idade)} anos e mais velho: {np.min(Ar_idade)}. A diferença de idade entre eles:{dif_idade} ')
+print(f'O total de funcionários:{np.count_nonzero(Ar_idade)} ')
+print(f'O funcionario com maior maior salario é {}')
+print(f'O funcionario com maior tempo de casa é {}')
+
