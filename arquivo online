@@ -1,0 +1,87 @@
+import pandas as pd
+import numpy as np
+
+print('---- OBTENDO DADOS ----')
+
+# Importando a base de dados de ocorrencias
+endereco_dados = 'https://www.ispdados.rj.gov.br/Arquivos/BaseDPEvolucaoMensalCisp.csv' 
+
+# Criando o DataFrame de ocorrencias
+df_ocorrencias = pd.read_csv(endereco_dados, sep=';', encoding='iso-8859-1')
+df_hom_doloso = df_ocorrencias[['ano', 'hom_doloso']]
+df_hom_doloso = df_hom_doloso.groupby(['ano']).sum(['hom_doloso']).reset_index()
+#df_homdol=df_homdol[df_homdol['ano'].between(2003,2024)]
+
+#Exibindo a base de dados ocorrências
+print('\n---- EXIBINDO A BASE DE DADOS -----')
+print(df_hom_doloso)
+
+
+#Calculando a média de homicídio doloso
+media_hom_doloso = np.mean(df_hom_doloso['hom_doloso'])
+
+#Exibindo a média de homicídio doloso
+print('\n---- EXIBINDO A média -----')
+print(media_hom_doloso)
+
+
+#Calculado a mediana de homicídio doloso
+mediana_hom_doloso = np.median(df_hom_doloso['hom_doloso'])
+
+#Exibindo a mediana de homicídio doloso
+print('\n---- EXIBINDO A mediana -----')
+print(mediana_hom_doloso)
+
+
+#Calculando a distância entre a média e a mediana de homicídio doloso
+distancia_hom_doloso = media_hom_doloso - mediana_hom_doloso
+
+#Exibindo a distância entre a média e a mediana de homicídio doloso
+print('\n---- EXIBINDO A distância -----')
+print(distancia_hom_doloso) 
+
+#Calculando os quartis de homicídio doloso
+q1_hom_doloso = np.percentile(df_hom_doloso['hom_doloso'], 25)
+q2_hom_doloso = np.percentile(df_hom_doloso['hom_doloso'], 50)
+q3_hom_doloso = np.percentile(df_hom_doloso['hom_doloso'], 75) 
+
+#Exibindo os quartis de homicídio doloso
+print('\n---- EXIBINDO OS QUARTIS -----')
+print(q1_hom_doloso)
+print(q2_hom_doloso)
+print(q3_hom_doloso)
+
+
+#Calculando o IQR de homicídio doloso
+iqr_hom_doloso = np.percentile(df_hom_doloso['hom_doloso'], 75) - np.percentile(df_hom_doloso['hom_doloso'], 25)
+
+#Exibindo o IQR de homicídio doloso
+print('\n---- EXIBINDO O IQR -----')
+print(iqr_hom_doloso)
+
+
+#Calculando os outliers inferiores e superiores de homicídio doloso
+limite_inferior_hom_doloso = np.percentile(df_hom_doloso['hom_doloso'], 25) - 1.5 * iqr_hom_doloso
+limite_superior_hom_doloso = np.percentile(df_hom_doloso['hom_doloso'], 75) + 1.5 * iqr_hom_doloso
+
+#Exibindo os outliers inferiores e superiores de homicídio doloso
+print('\n---- EXIBINDO OS OUTLIERS -----')
+print(limite_inferior_hom_doloso)
+print(limite_superior_hom_doloso)           
+
+
+#Calculando a amplitude de homicídio doloso
+amplitude_hom_doloso = max(df_hom_doloso['hom_doloso']) - min(df_hom_doloso['hom_doloso'])  
+
+#Exibindo a amplitude de homicídio doloso
+print('\n---- EXIBINDO A amplitude -----')
+print(amplitude_hom_doloso) 
+
+
+
+#Calculando o percentual de variação de homicídio doloso
+percentual_variacao_hom_doloso = ((max(df_hom_doloso['hom_doloso']) - min(df_hom_doloso['hom_doloso'])) / min(df_hom_doloso['hom_doloso'])) * 100
+
+#Exibindo o percentual de variação de homicídio doloso   
+print('\n---- EXIBINDO O percentual de variação -----')
+print(percentual_variacao_hom_doloso)
