@@ -1,0 +1,75 @@
+Segue abaixo um **relatório de análise de correlação** dos dados fornecidos, estruturado de forma clara e objetiva. Ele pode ser usado para fins técnicos ou executivos, conforme necessário.
+
+---
+
+# 📊 Relatório de Análise de Correlação
+
+### Objetivo:
+
+Analisar a correlação entre diferentes variáveis relacionadas a ocorrências policiais, como roubo, furto e recuperação de veículos, bem como dados de unidades policiais (CISP e AISP).
+
+---
+
+## 1. 📋 Descrição dos Dados
+
+Os dados fornecidos possuem as seguintes variáveis:
+
+* **cisp**: Quantidade de Centros Integrados de Segurança Pública
+* **aisp**: Quantidade de Áreas Integradas de Segurança Pública
+* **roubo\_veiculo**: Total de roubos de veículos
+* **furto\_veiculos**: Total de furtos de veículos
+* **recuperacao\_veiculos**: Total de veículos recuperados
+
+A base contém **7 registros**.
+
+---
+
+## 2. 📈 Análise de Correlação
+
+A correlação avalia a força e a direção da relação entre duas variáveis. O coeficiente de correlação de Pearson (r) varia de -1 a +1:
+
+* **+1**: Correlação positiva perfeita
+* **0**: Sem correlação
+* **-1**: Correlação negativa perfeita
+
+### 🔢 Matriz de Correlação
+
+| Variável                  | cisp  | aisp  | roubo\_veiculo | furto\_veiculos | recuperacao\_veiculos |
+| ------------------------- | ----- | ----- | -------------- | --------------- | --------------------- |
+| **cisp**                  | 1.00  | 1.00  | -0.21          | -0.79           | 0.13                  |
+| **aisp**                  | 1.00  | 1.00  | -0.21          | -0.79           | 0.13                  |
+| **roubo\_veiculo**        | -0.21 | -0.21 | 1.00           | 0.36            | -0.22                 |
+| **furto\_veiculos**       | -0.79 | -0.79 | 0.36           | 1.00            | 0.14                  |
+| **recuperacao\_veiculos** | 0.13  | 0.13  | -0.22          | 0.14            | 1.00                  |
+
+---
+
+## 3. 🧠 Principais Insights
+
+1. **CISP e AISP** são perfeitamente correlacionadas (**r = 1.00**), o que sugere que ambas variáveis crescem juntas e podem representar o mesmo fenômeno ou estarem altamente relacionadas estruturalmente.
+
+2. **CISP/AISP vs Furto de Veículos** apresenta **correlação negativa forte** (**r ≈ -0.79**), indicando que mais unidades de segurança estão associadas a menos furtos de veículos.
+
+3. **Furto vs Roubo de Veículos** tem **correlação moderada positiva** (**r ≈ 0.36**), sugerindo que os locais com mais furtos também tendem a ter mais roubos, embora a relação não seja forte.
+
+4. **Recuperação de veículos** não apresenta correlações fortes com nenhuma das outras variáveis.
+
+---
+
+## 4. 📌 Conclusões
+
+* A presença de mais unidades de segurança (CISP/AISP) parece associar-se à **redução de furtos de veículos**.
+* Há uma relação moderada entre furtos e roubos de veículos, indicando que áreas com um tipo de crime tendem a ter o outro também.
+* O número de veículos recuperados **não está claramente correlacionado** com os demais indicadores — pode depender de outros fatores (logística, policiamento reativo, etc).
+
+---
+
+## 5. 📉 Recomendações
+
+* Avaliar se o aumento de unidades CISP/AISP pode ter impacto positivo em reduzir furtos em outras regiões.
+* Investigar por que áreas com altos índices de furto e roubo não têm proporcionalmente altos índices de recuperação.
+* Considerar análise multivariada com mais registros e variáveis (tempo, localização, efetivo policial, entre outros) para obter conclusões mais robustas.
+
+---
+
+Se desejar, posso gerar também gráficos (como heatmaps ou diagramas de dispersão) ou entregar o relatório em PDF/Word com visual profissional. Deseja isso?
