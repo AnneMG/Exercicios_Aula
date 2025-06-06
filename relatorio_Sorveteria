@@ -1,0 +1,61 @@
+# **Relatório de Análise de Produção de Sorvete – Janeiro de 2024**
+
+## **1. Introdução**
+
+Este relatório apresenta a análise dos dados referentes à produção de sorvete durante o mês de janeiro de 2024, considerando as variáveis de temperatura média e umidade relativa do ar. O objetivo é compreender a relação entre esses fatores climáticos e a produção de sorvete ao longo do período.
+
+---
+
+## **2. Dados Observados**
+
+A base de dados contempla registros diários de 1º a 31 de janeiro de 2024, contendo as seguintes variáveis:
+
+* **Data**
+* **Produção de Sorvete (unidades)**
+* **Temperatura Média (°C)**
+* **Umidade Relativa (%)**
+
+A produção variou de 200 unidades no início do mês até 500 unidades no final, acompanhando o aumento da temperatura média (30°C a 60°C) e da umidade (70% a 130%).
+
+---
+
+## **3. Estatísticas Descritivas – Temperatura Média**
+
+* **Média da Temperatura**: 45,0 °C
+* **Mediana da Temperatura**: 45,0 °C
+* **Intervalo Interquartílico (IQR)**: 16,0
+* **Limite Inferior (detecção de outliers)**: 13,0 °C
+* **Limite Superior (detecção de outliers)**: 77,0 °C
+
+**Resultado da Análise de Outliers**:
+
+* **Inferiores**: Não foram detectados outliers inferiores.
+* **Superiores**: Não foram detectados outliers superiores.
+
+---
+
+## **4. Análise de Correlação e Regressão Linear**
+
+Foi realizada uma análise de correlação entre a **temperatura média** e a **produção de sorvete**. Os resultados foram os seguintes:
+
+* **Correlação (r)**: 1.000
+* **Coeficiente Angular da Regressão (a)**: 9,996
+* **Intercepto da Regressão (b)**: -99,819
+* **Coeficiente de Determinação (R²)**: 0.999
+
+**Interpretação**:
+
+* Existe uma **correlação perfeita** (positiva) entre o aumento da temperatura média e a produção de sorvete.
+* O modelo de regressão linear ajustado é altamente explicativo, com **R² = 0.999**, indicando que 99,9% da variação na produção pode ser explicada pela variação da temperatura.
+
+---
+
+## **5. Conclusões**
+
+* A produção de sorvete apresentou um crescimento linear ao longo do mês de janeiro, acompanhando diretamente o aumento da temperatura.
+* Não foram encontrados outliers nas temperaturas registradas, o que indica consistência e estabilidade nos dados.
+* A forte correlação positiva entre temperatura e produção reforça a influência climática no consumo e demanda por sorvetes.
+
+---
+
+Se desejar, posso gerar também gráficos, análises preditivas ou um PDF com esse relatório. Deseja isso?
